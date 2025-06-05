@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+  --light-bg: #f0f6fc;
+  --light-primary: #002855;
+  --light-secondary: #b3d4fc;
+  --dark-bg: #0a192f;
+  --dark-primary: #1c2b3a;
+  --dark-secondary: #112240;
+  --text-light: #0a192f;
+  --text-dark: #f8f8f8;
+  --accent-dark: #2b4d66;
+}
+
+body {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--light-bg);
+  color: var(--text-light);
+  transition: background-color 0.3s, color 0.3s;
+  scroll-behavior: smooth;
+  padding: 0 1.5rem;
+}
+
+header {
+  background: var(--light-primary);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 20px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  margin: 0.5rem 0.75rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.theme-toggle {
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+#profile h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.2rem;
+  color: var(--light-primary);
+}
+
+#profile a {
+  color: var(--light-primary);
+  text-decoration: none;
+}
+
+#profile a:hover {
+  text-decoration: underline;
+}
+
+.dark-mode #profile h1 {
+  color: var(--text-dark);
+}
+
+.dark-mode #profile a {
+  color: var(--dark-primary);
+}
+
+.section {
+  padding: 5rem 0 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.social-icons a {
+  margin-right: 1rem;
+  color: var(--light-primary);
+  font-size: 1.5rem;
+}
+
+.resume-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: var(--light-primary);
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white !important;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.resume-btn:hover {
+  background-color: #001c44;
+}
+
+.dark-mode .resume-btn {
+  background-color: var(--accent-dark);
+  color: white !important;
+}
+
+.dark-mode .resume-btn:hover {
+  background-color: #35546b;
+}
+
+.card {
+  border: 1px solid var(--light-secondary);
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode {
+  background-color: var(--dark-bg);
+  color: var(--text-dark);
+}
+
+.dark-mode header {
+  background: var(--accent-dark);
+}
+
+.dark-mode .card {
+  background-color: var(--dark-secondary);
+  border-color: var(--accent-dark);
+}
+
+.dark-mode .card:hover {
+  box-shadow: 0 8px 20px rgba(43, 77, 102, 0.2);
+}
+
+.dark-mode .social-icons a {
+  color: var(--accent-dark);
+}
+
+#scrollTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+  font-size: 1.5rem;
+  border: none;
+  outline: none;
+  background-color: var(--light-primary);
+  color: white;
+  cursor: pointer;
+  padding: 10px 14px;
+  border-radius: 20%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: background-color 0.3s ease;
+  width: 50px;
+}
+
+#scrollTopBtn:hover {
+  background-color: #001c44;
+}
+
+.dark-mode #scrollTopBtn {
+  background-color: var(--accent-dark);
+  color: var(--text-dark);
+}
+
+.dark-mode #scrollTopBtn:hover {
+  background-color: #35546b;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  nav a {
+    margin: 0.3rem 0;
+  }
+
+  .section {
+    padding: 6rem 1.5rem 2rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .social-icons {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
